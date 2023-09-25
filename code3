@@ -1,0 +1,86 @@
+
+editor: visual 
+---
+
+
+Data:
+source = 'https://raw.githubusercontent.com/fivethirtyeight/data/master/college-majors/majors-list.csv' data = read.csv(source)
+
+#1. Using the 173 majors listed in fivethirtyeight.com's College Majors dataset [https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/], provide code that identifies the majors that contain either "DATA" or "STATISTICS".
+
+The Data can be found in:
+The data can be found in [https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/]
+
+Run All Chunks AboveRun Current Chunk
+2- Identify majors DATA or Statistics:
+Using the 173 majors listed in fivethirtyeight.com's College Majors dataset [https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/], provide code that identifies the majors that contain either "DATA" or "STATISTICS"
+
+
+
+
+Run All Chunks AboveRun Current Chunk
+3- Write a code that transforms data:
+[1] "bell pepper" "bilberry" "blackberry" "blood orange"
+
+[5] "blueberry" "cantaloupe" "chili pepper" "cloudberry"
+
+[9] "elderberry" "lime" "lychee" "mulberry"
+
+[13] "olive" "salal berry"
+
+Into a format like this:
+
+c("bell pepper", "bilberry", "blackberry", "blood orange", "blueberry", "cantaloupe", "chili pepper", "cloudberry", "elderberry", "lime", "lychee", "mulberry", "olive", "salal berry")
+
+Run All Chunks AboveRun Current Chunk
+Remove the backlash and the space
+
+Run All Chunks AboveRun Current Chunk
+I add "," in between fruits
+
+Run All Chunks AboveRun Current Chunk
+write in
+
+Run All Chunks AboveRun Current Chunk
+#3 Describe, in words, what these expressions will match:
+(.)\1\1
+
+"(.)(.)\\2\\1"
+
+(..)\1
+
+"(.).\\1.\\1"
+
+"(.)(.)(.).*\\3\\2\\1"
+
+* (.)\1\1 - Repeat the chararacher at least three times
+Run All Chunks AboveRun Current Chunk
+* "(.)(.)\2\1" - 1st character then a 2nd character followed by 2nd chararacter then a first character. ex. xyyxbell pepper
+Run All Chunks AboveRun Current Chunk
+* (..)\1 - 2 charachters are repeated twice epep:
+Run All Chunks AboveRun Current Chunk
+* "(.).\1.\1" - Character shows-up 3 times with one character between each. epepe "e"
+Run All Chunks AboveRun Current Chunk
+"(.)(.)(.).\3\2\1" - 3 characters in one order with two characters between, then reversed ex. abc ** cba par**rap
+str_view(stringr::words, "(.)(.)(.).\3\2\1", match = TRUE)
+
+
+Run All Chunks AboveRun Current Chunk
+4. Construct regular expressions to match words that:
+* Start and end with the same character.
+{r}
+str_subset(words, "^(.)((.*\\1$)|\\1?$)")
+
+
+Run All Chunks AboveRun Current Chunk
+* Contain one letter repeated in at least three places (e.g. "eleven" contains three "e"s.)
+{r}
+ str_subset(words, "([A-Zh-z][A-Zh-z]).*\\1")
+
+
+Run All Chunks AboveRun Current Chunk
+* Contain one letter repeated in at least three places (e.g. “eleven” contains three “e”s.)
+
+
+
+Run All Chunks AboveRun Current Chunk
